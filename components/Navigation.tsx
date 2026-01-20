@@ -12,17 +12,17 @@ interface NavigationProps {
 
 export const Navigation: React.FC<NavigationProps> = ({ user, onLogout, currentPage, onNavigate, theme, toggleTheme }) => {
   return (
-    <nav className="bg-gradient-to-r from-indigo-600 to-indigo-700 dark:from-indigo-900 dark:to-indigo-950 text-white shadow-xl sticky top-0 z-50 transition-all duration-300 border-b border-indigo-500/20">
+    <nav className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-50 transition-all duration-300 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center cursor-pointer group" onClick={() => onNavigate('home')}>
             <div className="relative mr-3">
-              <svg className="w-8 h-8 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-8 h-8 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              <div className="absolute inset-0 bg-white/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              <div className="absolute inset-0 bg-white/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 animate-glow-pulse"></div>
             </div>
-            <span className="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-100">SkillNexus</span>
+            <span className="font-bold text-xl tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">SkillNexus</span>
           </div>
           
           <div className="hidden md:block">
@@ -32,26 +32,26 @@ export const Navigation: React.FC<NavigationProps> = ({ user, onLogout, currentP
                   {[
                     { key: 'dashboard', label: 'Dashboard' },
                     { key: 'swap', label: 'Skill Swap' },
-                    { key: 'messages', label: '💬 Messages' },
-                    { key: 'statistics', label: '📊 Statistics' },
+                    { key: 'messages', label: ' Messages' },
+                    { key: 'statistics', label: ' Statistics' },
                     { key: 'resources', label: 'My Learning' },
                     { key: 'about', label: 'About' }
                   ].map((page) => (
                     <button 
                       key={page.key}
                       onClick={() => onNavigate(page.key)} 
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative overflow-hidden group ${
+                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative overflow-hidden group ${
                         currentPage === page.key 
-                          ? 'bg-white/20 text-white shadow-lg shadow-indigo-500/20' 
-                          : 'text-indigo-50 hover:text-white'
+                          ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300' 
+                          : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                       }`}
                     >
                       <span className="relative z-10">{page.label}</span>
                       {currentPage === page.key && (
-                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-white via-indigo-100 to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                       )}
                       {currentPage !== page.key && (
-                        <div className="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div className="absolute inset-0 bg-blue-50 dark:bg-blue-900/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg"></div>
                       )}
                     </button>
                   ))}
@@ -64,44 +64,62 @@ export const Navigation: React.FC<NavigationProps> = ({ user, onLogout, currentP
             {/* Theme Toggle */}
             <button 
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-white/20 focus:outline-none transition-all duration-300 group relative"
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition-all duration-300 group relative"
               title={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
             >
-              <div className="absolute inset-0 bg-white/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
+              <div className="absolute inset-0 bg-blue-100/50 dark:bg-blue-900/50 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
               {theme === 'light' ? (
-                <svg className="w-5 h-5 text-indigo-100 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
+                <div className="relative">
+                  <svg className="w-5 h-5 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+                </div>
               ) : (
-                <svg className="w-5 h-5 text-yellow-300 group-hover:text-yellow-200 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
+                <div className="relative">
+                  <svg className="w-5 h-5 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300 animate-glow-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-indigo-400 rounded-full animate-ping"></div>
+                </div>
               )}
+              <span className="ml-2 text-xs font-medium hidden sm:inline">
+                {theme === 'light' ? 'Dark' : 'Light'}
+              </span>
             </button>
 
             {user ? (
-              <div className="flex items-center space-x-3 sm:space-x-4">
-                <span className="text-sm opacity-90 hidden sm:block font-medium">Hi, {user.name}</span>
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-semibold">
+                      {user.name.charAt(0).toUpperCase()}
+                    </span>
+                  </div>
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300 hidden sm:block">
+                    {user.name}
+                  </span>
+                </div>
                 <button
                   onClick={onLogout}
-                  className="bg-white/20 hover:bg-white/30 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 border border-white/20 hover:border-white/40"
+                  className="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
                 >
-                  Logout
+                  Sign Out
                 </button>
               </div>
             ) : (
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => onNavigate('about')}
-                  className="text-sm text-white/90 px-3 py-2 rounded hover:bg-white/10 transition-colors"
+                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors"
                 >
                   About
                 </button>
                 <button
                   onClick={() => onNavigate('login')}
-                  className="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:shadow-lg hover:shadow-white/30 transition-all duration-300 hover:scale-105"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200 transform hover:scale-105"
                 >
-                  Login
+                  Sign In
                 </button>
               </div>
             )}

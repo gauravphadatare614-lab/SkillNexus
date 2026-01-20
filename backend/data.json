@@ -3,7 +3,7 @@
     {
       "id": "admin",
       "name": "Platform Owner",
-      "email": "owner@skillnexus.com",
+      "email": "deepjadhav767@gmail.com",
       "role": "OWNER",
       "skillsOffered": [],
       "skillsWanted": [],
@@ -103,80 +103,94 @@
       "matchedSwaps": [],
       "completedCourses": []
     }
-
-    
   ],
   "resources": [
     {
       "id": "res1",
       "skillId": "react",
-      "title": "Advanced React Patterns PDF",
+      "title": "React PDF",
       "type": "PDF",
-      "url": "https://example.com/react-patterns.pdf",
+      "url": "https://drive.google.com/file/d/1YLAD3QcUlk-YALe8C3RkXuJrNp4gUK0Z/view?usp=sharing",
       "uploadedBy": "admin"
     },
     {
       "id": "res2",
-      "skillId": "react",
-      "title": "React Hooks Deep Dive",
-      "type": "VIDEO",
-      "url": "https://example.com/react-hooks",
+      "skillId": "python",
+      "title": "Python Basics PDF",
+      "type": "PDF",
+      "url": "https://drive.google.com/file/d/19WfN1aIK-jmYrqQtpDXV885Yt7OOwiby/view?usp=sharing",
       "uploadedBy": "admin"
     },
     {
       "id": "res3",
-      "skillId": "python",
-      "title": "FastAPI Documentation",
-      "type": "LINK",
-      "url": "https://fastapi.tiangolo.com",
+      "skillId": "java script",
+      "title": "Java Script",
+      "type": "PDF",
+      "url": "https://drive.google.com/file/d/1x4P-Aktsad2VKeFbQ1WERJQHLasC0JJc/view?usp=sharing",
       "uploadedBy": "admin"
     },
     {
       "id": "res4",
-      "skillId": "design",
-      "title": "Figma Masterclass",
-      "type": "VIDEO",
-      "url": "https://example.com/figma-masterclass",
+      "skillId": "html",
+      "title": "HTML PDF",
+      "type": "PDF",
+      "url": "https://drive.google.com/file/d/1IumDEPmmxY2FsZqxjqLjZevAjNqTixoO/view?usp=sharing",
       "uploadedBy": "admin"
     },
     {
       "id": "res5",
-      "skillId": "java",
-      "title": "Java Fundamentals Guide",
+      "skillId": "css",
+      "title": "CSS & Styling",
       "type": "PDF",
-      "url": "https://example.com/java-guide.pdf",
+      "url": "https://drive.google.com/file/d/1d6QynuxvwArJ_-chZmgcCBqNptGEhGE5/view?usp=sharing",
       "uploadedBy": "admin"
     },
     {
       "id": "res6",
-      "skillId": "html",
-      "title": "HTML5 Complete Tutorial",
-      "type": "VIDEO",
-      "url": "https://example.com/html5-tutorial",
+      "skillId": "design",
+      "title": "UI & UX",
+      "type": "PDF",
+      "url": "https://drive.google.com/file/d/1sM1na358vjbGQvTuf7ih261PlUUhNTlh/view?usp=sharing",
       "uploadedBy": "admin"
     },
     {
       "id": "res7",
-      "skillId": "css",
-      "title": "CSS Grid & Flexbox Masterclass",
-      "type": "VIDEO",
-      "url": "https://example.com/css-masterclass",
+      "skillId": "marketing",
+      "title": "Digital Marketing PDF",
+      "type": "PDF",
+      "url": "https://drive.google.com/file/d/1mWU8lt0Q-NeOsguOHSXY8sFAgnIJA2rz/view?usp=sharing",
       "uploadedBy": "admin"
     },
     {
       "id": "res8",
-      "skillId": "marketing",
-      "title": "Digital Marketing Fundamentals",
+      "skillId": "public_speaking",
+      "title": "Public Speaking",
       "type": "PDF",
-      "url": "https://example.com/marketing.pdf",
+      "url": "https://drive.google.com/file/d/1uA8RrC7w08Stxj6Rr6k6sH3TQFGrXOYk/view?usp=sharing",
       "uploadedBy": "admin"
     },
     {
       "id": "res9",
-      "skillId": "public_speaking",
-      "title": "Public Speaking Masterclass",
-      "type": "VIDEO",
-      "url": "https://example.com/public-speaking",
+      "skillId": "data_analysis",
+      "title": "Data Analysis",
+      "type": "PDF",
+      "url": "https://drive.google.com/file/d/1Ei1JtCN55_YUG6EsRTA-WdSiHu-wgGyA/view?usp=sharing",
+      "uploadedBy": "admin"
+    },
+    {
+      "id": "res10",
+      "skillId": "machine_learning",
+      "title": "Machine Learning PDF",
+      "type": "PDF",
+      "url": "https://drive.google.com/file/d/1oo0xEN3P9Mhgnd1O3xVNiU4YOu_r2UEp/view?usp=sharing",
+      "uploadedBy": "admin"
+    },
+    {
+      "id": "res11",
+      "skillId": "sql",
+      "title": "SQL DataBase",
+      "type": "PDF",
+      "url": "https://drive.google.com/file/d/1QhUsUWLrHTEvD3IB_HdNghPqQmJx2IDf/view?usp=sharing",
       "uploadedBy": "admin"
     }
   ],
@@ -225,12 +239,17 @@
     }
   ],
   "current_user": {
-    "id": "admin",
-    "name": "Platform Owner",
-    "email": "owner@skillnexus.com",
-    "role": "OWNER",
-    "skillsOffered": [],
-    "skillsWanted": [],
+    "id": "u1",
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "role": "USER",
+    "skillsOffered": [
+      "react",
+      "design"
+    ],
+    "skillsWanted": [
+      "python"
+    ],
     "matchedSwaps": [],
     "completedCourses": []
   }

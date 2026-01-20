@@ -69,34 +69,34 @@ export const Dashboard: React.FC<DashboardProps> = ({ user }) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Dashboard</h1>
+      <div className="mb-8 animate-slide-in-left">
+        <h1 className="text-3xl font-bold text-slate-900 dark:text-white gradient-text">Dashboard</h1>
         <p className="text-slate-600 dark:text-slate-400">Welcome back, {user.name}. Here's what's happening.</p>
       </div>
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div className="card-enhanced p-6 animate-bounce-in" style={{ animationDelay: '0.1s' }}>
           <div className="text-sm text-slate-500 dark:text-slate-400 font-medium">Total Active Swaps</div>
-          <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mt-2">{mySwaps.length}</div>
+          <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mt-2 animate-float">{mySwaps.length}</div>
         </div>
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div className="card-enhanced p-6 animate-bounce-in" style={{ animationDelay: '0.2s' }}>
           <div className="text-sm text-slate-500 dark:text-slate-400 font-medium">Pending Requests</div>
-          <div className="text-3xl font-bold text-amber-500 mt-2">{pendingRequests.length}</div>
+          <div className="text-3xl font-bold text-amber-500 mt-2 animate-float" style={{ animationDelay: '0.5s' }}>{pendingRequests.length}</div>
         </div>
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div className="card-enhanced p-6 animate-bounce-in" style={{ animationDelay: '0.3s' }}>
           <div className="text-sm text-slate-500 dark:text-slate-400 font-medium">Skills Learned</div>
-          <div className="text-3xl font-bold text-emerald-500 mt-2">{user.completedCourses.length}</div>
+          <div className="text-3xl font-bold text-emerald-500 mt-2 animate-float" style={{ animationDelay: '1s' }}>{user.completedCourses.length}</div>
         </div>
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div className="card-enhanced p-6 animate-bounce-in" style={{ animationDelay: '0.4s' }}>
           <div className="text-sm text-slate-500 dark:text-slate-400 font-medium">Community Members</div>
-          <div className="text-3xl font-bold text-slate-700 dark:text-slate-200 mt-2">{allUsers.length}</div>
+          <div className="text-3xl font-bold text-slate-700 dark:text-slate-200 mt-2 animate-float" style={{ animationDelay: '1.5s' }}>{allUsers.length}</div>
         </div>
       </div>
 
       {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div className="card-enhanced p-6 animate-slide-in-left" style={{ animationDelay: '0.6s' }}>
           <h3 className="text-lg font-semibold mb-6 text-slate-800 dark:text-white">Most Wanted Skills</h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
@@ -115,7 +115,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ user }) => {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div className="card-enhanced p-6 animate-slide-in-right" style={{ animationDelay: '0.8s' }}>
           <h3 className="text-lg font-semibold mb-6 text-slate-800 dark:text-white">Platform Swap Status</h3>
           <div className="h-64 flex justify-center">
              <ResponsiveContainer width="100%" height="100%">
@@ -139,10 +139,10 @@ export const Dashboard: React.FC<DashboardProps> = ({ user }) => {
               </PieChart>
             </ResponsiveContainer>
           </div>
-          <div className="flex justify-center gap-4 mt-2 text-sm text-slate-500 dark:text-slate-400">
-            <div className="flex items-center"><div className="w-3 h-3 rounded-full bg-emerald-500 mr-2"></div> Accepted</div>
-            <div className="flex items-center"><div className="w-3 h-3 rounded-full bg-amber-500 mr-2"></div> Pending</div>
-            <div className="flex items-center"><div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div> Rejected</div>
+          <div className="flex justify-center gap-4 mt-2 text-sm text-slate-500 dark:text-slate-400 animate-fadeIn" style={{ animationDelay: '1s' }}>
+            <div className="flex items-center"><div className="w-3 h-3 rounded-full bg-emerald-500 mr-2 animate-glow-pulse"></div> Accepted</div>
+            <div className="flex items-center"><div className="w-3 h-3 rounded-full bg-amber-500 mr-2 animate-glow-pulse" style={{ animationDelay: '0.3s' }}></div> Pending</div>
+            <div className="flex items-center"><div className="w-3 h-3 rounded-full bg-red-500 mr-2 animate-glow-pulse" style={{ animationDelay: '0.6s' }}></div> Rejected</div>
           </div>
         </div>
       </div>

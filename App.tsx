@@ -14,7 +14,7 @@ import { User } from './types';
 function App() {
   const [user, setUser] = useState<User | null>(null);
   const [currentPage, setCurrentPage] = useState('home');
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   useEffect(() => {
     // Check for existing session
@@ -33,9 +33,11 @@ function App() {
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    } else {
+      // Default to dark theme
       setTheme('dark');
       document.documentElement.classList.add('dark');
+      localStorage.setItem('skillnexus_theme', 'dark');
     }
   }, []);
 
@@ -99,7 +101,37 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100 transition-colors duration-200">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100 transition-colors duration-200 relative">
+      {/* Sparkling Background */}
+      <div className="sparkles">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="star"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${Math.random() * 3 + 1}px`,
+              height: `${Math.random() * 3 + 1}px`,
+              animationDelay: `${Math.random() * 3}s`,
+            }}
+          />
+        ))}
+        {/* Shooting Stars */}
+        {[...Array(3)].map((_, i) => (
+          <div
+            key={`shooting-${i}`}
+            className="shooting-star"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 10 + 5}s`,
+              animationDuration: `${Math.random() * 5 + 8}s`,
+            }}
+          />
+        ))}
+      </div>
+      
       <Navigation 
         user={user} 
         onLogout={handleLogout} 

@@ -34,7 +34,7 @@ const tryFetch = async (url: string, options?: RequestInit) => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     const duration = (performance.now() - startTime).toFixed(2);
-    if (duration > 500) console.warn(`Slow endpoint: ${url} took ${duration}ms`);
+    if (parseFloat(duration) > 500) console.warn(`Slow endpoint: ${url} took ${duration}ms`);
     return data;
   } catch (e) {
     console.warn(`Backend call failed for ${url}:`, e instanceof Error ? e.message : e);
