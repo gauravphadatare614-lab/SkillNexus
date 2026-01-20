@@ -12,6 +12,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   }, []);
 
   return (
+    <>
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Navigation Bar */}
       <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-40">
@@ -289,5 +290,6 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           </div>
         </div>
     </div>
+    </>
   );
 };
